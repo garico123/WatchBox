@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">WatchBox</string>
+    <string name="released_title">Released : </string>
+    <string name="default_content_unavailable">Unavailable</string>
+    <string name="cast_title">Cast : </string>
+    <string name="director_title">Director : </string>
+    <string name="Writers_title">Writer/s : </string>
+    <string name="type_title">Type : </string>
+    <string name="imdb_rating_title">IMDB rating : </string>
+    <string name="favourite_title">Favourite</string>
+    <string name="title_unavailable">Title Unavailable</string>
+    <string name="description_unavailable">Description Unavailable</string>
+    <string name="search_title">Search for a title :</string>
+    <string name="search_hint">Search for movies here</string>
+    <string name="search_results_title">Search Result :</string>
+    <string name="more_info_btn">More Info</string>
+    <string name="lists_title">Movie Lists</string>
+    <string name="search_placeholder_text">Once you type your search and submit, Any results will show here. Click any result for more details.</string>
+    <string name="lists_placeholder_text">Tap on any movie to see more details. You can then add any you like to one of the available lists which will be displayed here.</string>
+    <string name="clear_data_btn">Clear Data</string>
+    <string name="watched_title">Watched</string>
+    <string name="reccomended_title">Reccomended</string>
+    <string name="favourite_btn">Favourites</string>
+    <string name="watched_btn">Watched</string>
+    <string name="reccomended_btn">Recommended</string>
+</resources>

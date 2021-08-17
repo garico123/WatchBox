@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/sv_search_bar"
+            android:layout_width="@dimen/width_0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            app:iconifiedByDefault="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            app:queryHint="@string/search_hint"/>
+
+        <ImageView
+            android:id="@+id/iv_search_divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_2dp"
+            android:background="@color/grey"
+            android:importantForAccessibility="no"
+            app:layout_constraintTop_toBottomOf="@id/sv_search_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_search_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_search_divider">
+
+            <TextView
+                android:id="@+id/tv_search_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_32dp"
+                android:layout_marginBottom="@dimen/margin_32dp"
+                android:text="@string/search_placeholder_text"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:layout_marginBottom="@dimen/margin_32dp"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/cl_search_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_favourites_divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_2dp"
+            android:background="@color/grey"
+            android:importantForAccessibility="no"
+            app:layout_constraintTop_toBottomOf="@id/rv_search_results"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_lists_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_32dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:text="@string/lists_title"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_favourites_divider" />
+
+        <Button
+            android:id="@+id/bt_favourite_list"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_35dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lists_title"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginBottom="@dimen/margin_32dp"
+            app:layout_constraintEnd_toStartOf="@id/bt_watched_list"
+            android:text="@string/favourite_btn"
+            android:textSize="@dimen/text_size_12sp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <Button
+        android:id="@+id/bt_watched_list"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_35dp"
+        app:layout_constraintStart_toEndOf="@id/bt_favourite_list"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lists_title"
+            app:layout_constraintEnd_toStartOf="@id/bt_reccomended_list"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:layout_marginBottom="@dimen/margin_32dp"
+        android:layout_marginStart="@dimen/margin_8dp"
+        android:text="@string/watched_btn"
+        android:textSize="@dimen/text_size_12sp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+        <Button
+            android:id="@+id/bt_reccomended_list"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_35dp"
+            app:layout_constraintStart_toEndOf="@id/bt_watched_list"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lists_title"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginBottom="@dimen/margin_32dp"
+            android:layout_marginStart="@dimen/margin_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/reccomended_btn"
+            android:textSize="@dimen/text_size_12sp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_favourites_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_favourite_list">
+
+            <TextView
+                android:id="@+id/tv_favourites_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_32dp"
+                android:text="@string/lists_placeholder_text"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_favourites_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/cl_favourites_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/bt_clear_data"
+            android:layout_width="@dimen/width_200dp"
+            android:layout_height="@dimen/height_35dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_favourites_list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/margin_32dp"
+            android:layout_marginBottom="@dimen/margin_32dp"
+            android:text="@string/clear_data_btn"
+            android:textSize="@dimen/text_size_12sp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
